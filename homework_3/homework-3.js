@@ -1,6 +1,4 @@
-
 let number = getRandomNumber();
-
 
 function getRandomNumber(n) {
 	n = Math.floor(Math.random() * 100); 
@@ -38,24 +36,26 @@ function hintMessage(n) {
 	} else if(n > number) {
 		return 'Это число больше!';
 	} else if(n = number){
-		return 'Это правильное число';
+		return 'Это правильное число!';
 	}
 }
 
 function checkNumber(attempts = 5) {
+	let currentNumber = number;
 
 	for (let i = attempts; i >= 1; i--) {
 			let enterNumber = askNumber();
-			if(enterNumber != number) {
+			if(enterNumber != currentNumber) {
 				alert(
 					`Осталось попыток: ${--attempts}
 					${hintMessage(enterNumber)}`
 					);
 			} else {
+				alert(`${hintMessage(enterNumber)}`);
 				break;
 			}
 	}
-	alert(`правильное число: ${number}`);
+	alert(`правильное число: ${currentNumber}`);
 }
 
 
