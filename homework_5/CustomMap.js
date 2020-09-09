@@ -8,17 +8,21 @@ let lena = { name: "Лена", age: 18 };
 let users = [ vasia, petia, masha, egor, dima, lena ];
 
 function customMap(array, cb) {
-	let item = [];
-	for (let i = 0; i < array.length; i++) {
+	let arr = [];
 
-		cb(item, array[i]);
+	for (let i = 0; i < array.length; i++) {
+		let item = array[i];
+
+	    if(!cb(item)) {
+	      continue;
+	    } else {
+	    	arr.push(cb(item));
+	    }
 	}
 
-	return item;
+	return arr;
 }
 
-let mapCallBack = function(item, index) {
-		return item.push(index);		
-};
-
-let newUsers = customMap(users, mapCallBack);
+let newUsers = customMap(users, function(item) {
+	if (item.age < 30) return item.name;
+});
