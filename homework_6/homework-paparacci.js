@@ -1,12 +1,16 @@
-function structureUserInfo(name) {
-	let infoOblect = {};
+// function structureUserInfo(name) {
+// 	let infoOblect = {};
 	
-	return function obj(role) {
+// 	return function obj(role) {
 
-		infoOblect.role = role;
-		infoOblect.name = name;
+// 		infoOblect.role = role;
+// 		infoOblect.name = name;
 
-		return infoOblect;
-	}
+// 		return infoOblect;
+// 	}
+// }
+
+function createCalculator(n) {
+	return (function { return n + 45 });
 }
-
+ 
