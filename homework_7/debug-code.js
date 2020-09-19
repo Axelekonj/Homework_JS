@@ -18,6 +18,6 @@ let user = {
 };
 
 
-getPasswordFromUser.call(user, this.loginSuccess, this.loginFail);
+getPasswordFromUser.bind(user, user.loginSuccess, user.loginFail);
 
 // коллбек-функции в аргументе не имеют доступ к this. методов обьекта user
