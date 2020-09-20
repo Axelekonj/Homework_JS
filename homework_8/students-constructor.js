@@ -17,7 +17,7 @@ Student.prototype.minMark = function(){
 
 Student.prototype.maxMark = function(){
 	let arr = this.markArr;
-
+	
 	return Math.max(...arr);
 };
 
