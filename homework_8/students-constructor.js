@@ -17,11 +17,10 @@ Student.prototype.minMark = function(){
 
 Student.prototype.maxMark = function(){
 	let arr = this.markArr;
-	
+
 	return Math.max(...arr);
+
 };
 
-
-let firstStudent = new Student('Student 1', [10,9,8,1,10])
 
 
