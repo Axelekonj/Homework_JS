@@ -3,9 +3,25 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/student-form.css" type="text/css">
 	<title>Document</title>
 </head>
 <body>
+	<div class="student">
+		<form class="student-form">
+			<div class="student-form__inner">
+				<input type="text" name="name">
+				<input type="text" name="surname">
+				<input type="number" name="age" min="7" max="40">
+				<input type="text" name="marks">
+			</div>
+			<button class="student-btn" type="submit" onclick="getValues">send</button>
+		</form>
+		<div class="student-info">
+			<ul class="student-list"></ul>
+			<button class="info-btn">refresh</button>
+		</div>
+	</div>
 	<!-- <script src="homework_2/homework-2.js"></script> -->
 	<!-- <script src="homework_2/homework-2_cycles.js"></script> -->
 	<!-- <script src="homework_2/homework-2_calculate.js"></script> -->
@@ -17,6 +33,7 @@
 	<!-- <script src="homework_7/debug-code.js"></script> -->
 	<!-- <script src="homework_7/uppercase-fn.js"></script> -->
 	<!-- <script src="homework_8/students-constructor.js"></script> -->
-	<script src="homework_9/expansion-student.js"></script>
+	<!-- <script src="homework_9/expansion-student.js"></script> -->
+	<script src="homework_11/getStudentValue.js"></script>
 </body> 
 </html>

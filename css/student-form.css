@@ -1,0 +1,30 @@
+.student {
+	display: flex;
+	justify-content: space-between;
+}
+
+button {
+	padding: 10px 10px;
+	
+	outline: none;
+	border: none;
+	border-radius: 15%;
+	cursor: pointer;
+
+	background-color: blue;
+	color: white;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.student-form__inner {
+	display: flex;
+	flex-direction: column;
+}
+
+.student-form__inner input {
+	margin-bottom: 20px;
+	overflow: hidden;
+	outline: none;
+}
+
