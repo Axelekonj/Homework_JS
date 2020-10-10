@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title>Document</title>
+</head>
+<body>
+	<div class="pizza">
+		<div class="pizza-wrapper">
+			<div class="order-pizza">
+				<form action="" id="order-form">
+					<fieldset class="order__radio">
+						<legend>Check size your pizza</legend>
+						<label for="S">Small</label>
+							
+						<input type="radio"id="S" name="size" value="small">
+						
+						<label for="M">Middle</label>
+							
+						<input type="radio"id="M" name="size" value="middle" checked>
+						
+						<label for="L">Large</label>
+							
+						<input type="radio"id="L" name="size" value="large">
+						
+					</fieldset>
+					<fieldset class="check_pizza">
+						<legend>Check product</legend>
+						<label for="">Mozzarela</label>
+						<input type="checkbox" name="checkbox" value="Mozzarela">
+						<label for="">Papperoni</label>
+						<input type="checkbox" name="checkbox" value="Papperoni">
+						<label for="">Meet</label>
+						<input type="checkbox" name="checkbox" value="Meet">
+						<label for="">Chiken</label>
+						<input type="checkbox" name="checkbox" value="Chiken">
+                        <label for="">Mashrooms</label>
+						<input type="checkbox" name="checkbox" value="Mashrooms">
+					</fieldset>
+				</form>
+			</div>
+			<div class="set-order">
+				<button class="order__btn">set your order</button>
+			</div>
+		</div>
+	</div>
+	<script src="Pizza-delivery.js"></script>
+</body>
+</html>

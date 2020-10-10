@@ -8,14 +8,12 @@
 </head>
 <body>
 	<div class="student">
-		<form class="student-form">
-			<div class="student-form__inner">
-				<input type="text" name="name">
-				<input type="text" name="surname">
-				<input type="number" name="age" min="7" max="40">
-				<input type="text" name="marks">
-			</div>
-			<button class="student-btn" type="submit" onclick="getValues">send</button>
+		<form class="student-form" method="post">
+				<input type="text" name="name" value="">
+				<input type="text" name="surname" value="">
+				<input type="number" name="age" value="" min="7" max="40">
+				<input type="text" name="marks" value="">
+			<button class="student-btn" type="submit">send</button>
 		</form>
 		<div class="student-info">
 			<ul class="student-list"></ul>
@@ -34,6 +32,5 @@
 	<!-- <script src="homework_7/uppercase-fn.js"></script> -->
 	<!-- <script src="homework_8/students-constructor.js"></script> -->
 	<!-- <script src="homework_9/expansion-student.js"></script> -->
-	<script src="homework_11/getStudentValue.js"></script>
 </body> 
 </html>

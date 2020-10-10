@@ -1,0 +1,14 @@
+label {
+	position: absolute;
+	left: 50px;
+}
+input {
+ display: block;
+ margin-bottom: 20px;
+}
+.order-pizza {
+	margin-bottom: 20px;
+}
+.order__radio {
+	margin-bottom: 20px;
+}
