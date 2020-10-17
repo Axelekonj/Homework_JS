@@ -12,3 +12,26 @@ input {
 .order__radio {
 	margin-bottom: 20px;
 }
+.order__btn {
+	padding: 10px 10px;
+	color: white;
+	background-color: blue;
+	border 1px solid blue;
+	border: none;
+	border-radius: 5%;
+	outline: none;
+	cursor: pointer;
+}
+.error--message {
+	display: none;
+	margin-left: 10px;
+	padding: 10px 15px;
+	color: white;
+	background-color: red;
+	border-width: 1px;
+	border-radius: 5%;
+	cursor: pointer;
+}
+.error--message.visibility {
+	display: inline-block;
+}

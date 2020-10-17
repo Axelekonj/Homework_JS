@@ -1,38 +1,83 @@
-let orderForm = document.forms[0];
-let setPizzaButton = document.querySelector('.order__btn');
 
-let checkRadio = Array.from(orderForm.elements.size);
-let checkRadioChecked;
-
-let checkBox = Array.from(orderForm.elements.checkbox)
-let checkBoxChecked;
 
 class Order {
+	status = ['ordered', 'coocked', 'delivered'];
 	constructor (config) {
-		this.size = config.size;
 		this.products = config.products;
-		this.status = config.status;
+		this.size = config.size;
+	};
+
+}
+
+class exampleOrder extends Order {
+	constructor({size, products, status}) {
+		super({size, products});
+	};
+
+}
+
+let inputs = document.getElementsByTagName('input');
+
+function getOrderValues(arr) {
+	
+	let products = [],
+	size = " ";
+	
+	Array.prototype.forEach.call(arr, function(item) {
+		if (item.checked) {
+			if (item.type == "radio") {
+				size = item.value;
+			} else if (item.type == "checkbox") {
+				products.push(item.value);
+			}
+		}
+	});
+
+	return {size, products}
+}
+
+function setOrder(){
+	let {size, products} = getOrderValues(inputs);
+	let order;
+
+	if (validateOrderProducts(products)) {
+
+		message.classList.remove('visibility')
+		
+
+	} else {
+
+		message.classList.add('visibility');
+		return null
+
 	}
 
+	return order = new exampleOrder({size, products});
 }
 
-class getNewOrder extends Order {
-	constructor({size, products, status}) {
-		super({size, products, status});
+function validateOrderProducts(item) {
+
+	if (item.length >= 3) {
+		return true;
 	};
+
+	return false;
 }
 
-let newOrder;
+let checkButton = document.querySelector('button');
+let orderGroup = [];
+let message = document.querySelector(".error--message");
 
-setPizzaButton.addEventListener('click', function (){
-	checkRadioChecked = checkRadio.find((item) => item.checked);
-	// checkBoxChecked = checkBox.map((item) => item.checked)
+checkButton.addEventListener('click', function() {
+	let order = setOrder();
 
-	newOrder = new getNewOrder({
-		size: checkRadioChecked.value,
-		// checkBoxChecked
-	})
+	let confirmPayment = confirm('Вы подтверждаете оплату?');
 
-	});
+	if(confirmPayment) {
+		orderGroup.push(order)
+	}
+})
+
+
 
 

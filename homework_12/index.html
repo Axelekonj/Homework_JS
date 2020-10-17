@@ -10,7 +10,7 @@
 	<div class="pizza">
 		<div class="pizza-wrapper">
 			<div class="order-pizza">
-				<form action="" id="order-form">
+				<form action="" name="orderForm">
 					<fieldset class="order__radio">
 						<legend>Check size your pizza</legend>
 						<label for="S">Small</label>
@@ -31,11 +31,11 @@
 						<label for="">Mozzarela</label>
 						<input type="checkbox" name="checkbox" value="Mozzarela">
 						<label for="">Papperoni</label>
-						<input type="checkbox" name="checkbox" value="Papperoni">
+						<input type="checkbox" name="checkbox" value="Papperoni" checked>
 						<label for="">Meet</label>
-						<input type="checkbox" name="checkbox" value="Meet">
+						<input type="checkbox" name="checkbox" value="Meet" checked> 
 						<label for="">Chiken</label>
-						<input type="checkbox" name="checkbox" value="Chiken">
+						<input type="checkbox" name="checkbox" value="Chiken" checked>
                         <label for="">Mashrooms</label>
 						<input type="checkbox" name="checkbox" value="Mashrooms">
 					</fieldset>
@@ -44,6 +44,7 @@
 			<div class="set-order">
 				<button class="order__btn">set your order</button>
 			</div>
+			<p class="error--message">Добавь не меньше 3-х ингридиентов</p>
 		</div>
 	</div>
 	<script src="Pizza-delivery.js"></script>
