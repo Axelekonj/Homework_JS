@@ -1,0 +1,8 @@
+ul > li {
+	cursor: pointer;
+	width: 200px;
+}
+
+.selected {
+	background-color: #pink;
+}
