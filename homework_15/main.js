@@ -7,13 +7,15 @@ let snake = createSnakeData(Math.floor(gridCount / 2), Math.floor(gridCount / 2)
 let direction = 'left';
 let gridContainer;
 let food = createFood();
+let startGameButton = find('#start-game');
+let	endGameButton = find('#end-game');
+
+
 
 document.addEventListener('DOMContentLoaded', init);
-document.addEventListener('keydown', snakeHendler);
-
-function snakeHendler() {
-	updateDirection()
-}
+startGameButton.addEventListener('click', startGame);
+endGameButton.removeEventListener('click', startGame);
+document.addEventListener('keydown', updateDirection);
 
 function updateDirection(event) {
 	if (event.keyCode == 37 && direction != "right")
@@ -38,24 +40,17 @@ function createSnakeData(cell, row, count) {
 	return arr;
 }
 
-function createFood() {
-	let food = new Image(boxSize - 7, boxSize - 7);
-	food.setAttribute('src', './img/apple.png');
-	food.classList.add('snake-food');
-
-	return food;
-}
-
 function init() {
 	gridContainer = find('#snake-container');
 	let messageBox = find('#message');
 	let score = find('.score > b');
 
 	initGrid(gridCount, gridContainer);
-	startGame();
+	
 }
 
 function startGame() {
+	endGameButton.style.display = "block";
 	updateSnake();
 	processGame = setInterval(() => {
 		let {cell, row} = snake[0];
@@ -113,21 +108,33 @@ function startGame() {
 				cell.className = "snake-cell";
 			}
 		}
-
-		function generateBoxForEat() {
-			let cell = getRandomInit(0, gridCount);
-			let row = getRandomInit(0, gridCount);
-			let randomBox = findByCoords(cell, row);
-
-			randomBox.append(food);
-
-			return randomBox;
-		}
-
-		function getRandomInit(min, max) {
-			return Math.floor(Math.random() * (max - min)) + min;
-		}
 	}
+}
+
+function endGame() {
+	startGameButton.removeEventListener('click', startGame);
+}
+
+function createFood() {
+	let food = new Image(boxSize - 7, boxSize - 7);
+	food.setAttribute('src', './img/apple.png');
+	food.classList.add('snake-food');
+
+	return food;
+}
+
+function generateBoxForEat() {
+	let cell = getRandomInit(0, gridCount);
+	let row = getRandomInit(0, gridCount);
+	let randomBox = findByCoords(cell, row);
+
+	randomBox.append(food);
+
+	return randomBox;
+}
+
+function getRandomInit(min, max) {
+	return Math.floor(Math.random() * (max - min)) + min;
 }
 
 function initGrid(gridCount, target) {
