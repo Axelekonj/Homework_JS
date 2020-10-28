@@ -1,0 +1,47 @@
+body {
+	font-family: 'Arial', sans-serif;
+	font-size: 15px;
+	color: #2f4f4f;
+}
+
+label,
+input {
+	display: block;
+}
+
+label {
+	margin-bottom: 20px;
+}
+label:first-of-type {
+	margin-bottom: 30px;
+}
+input {
+	margin-top: 5px;
+	padding: 0.5em 10px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: silver;
+	border-radius: 5px;
+	outline: none;
+}
+.register-btn {
+	margin-top: 10px;
+	padding: 0.5em 10px;
+	border: none;
+	background-color: #2b8dc7;
+	border-radius: 5px;
+	outline: none;
+	cursor: pointer;
+}
+
+.register-btn span {
+	color: white;
+}
+
+.error-text {
+	color: #b22222;
+}
+
+.error-input {
+	border-color:  #b22222;
+}
