@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="student-form.css" type="text/css">
+	<title>Document</title>
+</head>
+<body>
+	<div class="student">
+		<div class="student-form__fields">
+			<form class="student-form">
+				<fieldset>
+					<legend>Student</legend>
+					<input type="text" name="name" placeholder="Name" required>
+					<input type="text" name="surname" placeholder="Surname" required>
+					<input type="number" name="age" placeholder="age" min="7" max="40" required>
+					<input type="text" name="marks" placeholder="Marks">
+				</fieldset>
+			</form>
+			<button class="student-btn">send</button>
+		</div>
+		<div class="student-info">
+			<ol class="student-list">
+			</ol>
+			<button class="info-btn">refresh</button>
+		</div>
+	</div>
+	<script src="getStudentValue.js"></script>
+</body>
+</html>
