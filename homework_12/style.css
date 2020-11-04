@@ -1,13 +1,43 @@
+
+.pizza {
+	width: 100vw;
+}
+.order-pizza {
+	margin-bottom: 20px;
+}
 label {
 	position: absolute;
 	left: 50px;
 }
-input {
- display: block;
- margin-bottom: 20px;
+
+.order-form fieldset {
+	border: none;
 }
-.order-pizza {
-	margin-bottom: 20px;
+
+input {
+ 	display: block;
+ 	margin-bottom: 20px;
+}
+
+.order-status {
+	text-align: center;
+	margin: 50px 0;
+}
+
+.order-status span {
+	display: none;
+	padding: 10px 10px;
+	
+	color: white;
+	background-color: blue;
+	border-radius: 5px;
+
+	text-align: center;
+	font-size: 20px;
+}
+.order-status span.visibility {
+	display: inline-block;
+	
 }
 .order__radio {
 	margin-bottom: 20px;
@@ -16,9 +46,8 @@ input {
 	padding: 10px 10px;
 	color: white;
 	background-color: blue;
-	border 1px solid blue;
-	border: none;
-	border-radius: 5%;
+	border: 1px solid blue;
+	border-radius: 5px;
 	outline: none;
 	cursor: pointer;
 }
@@ -34,4 +63,23 @@ input {
 }
 .error--message.visibility {
 	display: inline-block;
+}
+
+.order-evaluate {
+	width: 30vw;
+	margin: 0 auto;
+	display: none;
+}
+.order-evaluate.visibility {
+	display: block;
+}
+.order-evaluate__icons {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.order-evaluate__icons .icon {
+	font-size: 40px;
+	margin: 0 10px;
 }

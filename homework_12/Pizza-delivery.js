@@ -1,22 +1,45 @@
 
+let inputs = document.getElementsByTagName('input');
+let checkButton = document.querySelector('button');
+let orderGroup = [];
+let evaluate = document.querySelector('.order-evaluate');
 
 class Order {
-	status = ['ordered', 'coocked', 'delivered'];
+	status;
 	constructor (config) {
 		this.products = config.products;
 		this.size = config.size;
-	};
+	}
 
+	get status() {
+		return orderGroup.filter(item => item.status)
+	}
+
+	set status(value) {
+		this.status = value
+	}
 }
 
-class exampleOrder extends Order {
-	constructor({size, products, status}) {
-		super({size, products});
-	};
+checkButton.addEventListener('click', function() {
+	let order = setOrder();
 
-}
+	if (order) {
+		if (confirmPayment()) {
 
-let inputs = document.getElementsByTagName('input');
+			orderGroup.push(order)
+			hiddenOrderForm("none");
+			showStatusMessage();
+		} else {
+
+			errorMessage('Оплата не произошла')
+		}
+
+	} else {
+
+		return
+	}
+})
+
 
 function getOrderValues(arr) {
 	
@@ -36,23 +59,22 @@ function getOrderValues(arr) {
 	return {size, products}
 }
 
-function setOrder(){
+function setOrder() {
 	let {size, products} = getOrderValues(inputs);
 	let order;
 
 	if (validateOrderProducts(products)) {
 
-		message.classList.remove('visibility')
-		
-
+		order = new Order({size, products});
+		errorMessage();
 	} else {
 
-		message.classList.add('visibility');
-		return null
+		errorMessage('Добавь не меньше 3-х ингридиентов');
+		return
 
 	}
 
-	return order = new exampleOrder({size, products});
+	return order;
 }
 
 function validateOrderProducts(item) {
@@ -64,19 +86,71 @@ function validateOrderProducts(item) {
 	return false;
 }
 
-let checkButton = document.querySelector('button');
-let orderGroup = [];
-let message = document.querySelector(".error--message");
+function errorMessage(text) {
 
-checkButton.addEventListener('click', function() {
-	let order = setOrder();
+	let message = document.querySelector(".error--message");
 
-	let confirmPayment = confirm('Вы подтверждаете оплату?');
+	message.classList.toggle("visibility");
+	message.textContent = text;
 
-	if(confirmPayment) {
-		orderGroup.push(order)
+	if (!text) {
+
+		message.classList.remove('visibility');
+
 	}
-})
+}
+
+function confirmPayment() {
+
+	return confirm('Вы подтверждаете оплату?')
+}
+
+function hiddenOrderForm(value) {
+
+	let formWrapper = document.querySelector('.pizza-wrapper')
+	formWrapper.style.display = value;
+}
+
+let message = function(text, status) {
+
+	let element = document.querySelector(".order-status > span");
+	let currentOrder = orderGroup.length - 1;
+	
+	if (status) orderGroup[currentOrder].status = status;
+	element.textContent = text;
+	element.classList.add('visibility')
+}
+
+function showEvaluateOrder() {
+
+	evaluate.classList.add('visibility')
+}
+
+function hideEvaluateOrder() {
+	evaluate.classList.remove("visibility")
+}
+
+function checkEventLike() {
+	let evaluateIconsBlock = evaluate.firstElementChild	
+
+	evaluateIconsBlock.addEventListener('click', (e) => {
+
+		hideEvaluateOrder();
+		message("Cпасибо за ваш отзыв...", "delivered")
+	});
+}
+
+function showStatusMessage() {
+
+	setTimeout(message, 500, "Идет приготовление...", "coocked");
+	setTimeout(message, 5000, "Курьер забрал пиццу", "delivered");
+	setTimeout(message, 10000, "Курьер доставил пиццу", "delivered");
+	setTimeout(message, 15000, "Оцените пожалуйста наш сервис...", "delivered");
+	setTimeout(showEvaluateOrder, 16000)
+	setTimeout(checkEventLike, 16500);
+}
+
+
 
 
 

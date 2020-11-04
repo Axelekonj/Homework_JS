@@ -4,13 +4,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css" type="text/css">
+	<script src="https://use.fontawesome.com/cecb31bdbf.js"></script>
 	<title>Document</title>
 </head>
 <body>
 	<div class="pizza">
 		<div class="pizza-wrapper">
 			<div class="order-pizza">
-				<form action="" name="orderForm">
+				<form action="" name="orderForm" class="order-form">
 					<fieldset class="order__radio">
 						<legend>Check size your pizza</legend>
 						<label for="S">Small</label>
@@ -44,9 +45,20 @@
 			<div class="set-order">
 				<button class="order__btn">set your order</button>
 			</div>
-			<p class="error--message">Добавь не меньше 3-х ингридиентов</p>
+			<p class="error--message"></p>
+		</div>
+		<div class="order-status">
+			<span></span>
+		</div>>
+		<div class="order-evaluate">
+			<div class="order-evaluate__icons">
+				<span class="fa fa-thumbs-o-down icon"></span>
+				<span class="fa fa-thumbs-o-up icon"></span>
+			</div>
 		</div>
 	</div>
 	<script src="Pizza-delivery.js"></script>
+	<!-- <script src="order.js"></script> -->
+	
 </body>
 </html>
