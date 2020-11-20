@@ -5,6 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css" type="text/css">
 	<script src="https://use.fontawesome.com/cecb31bdbf.js"></script>
+	<script type="module" src="modules/function.js"></script>
+	<script type="module" src="modules/order.js"></script>
+	<script type="module" src="Pizza-delivery.js"></script>
 	<title>Document</title>
 </head>
 <body>
@@ -14,18 +17,12 @@
 				<form action="" name="orderForm" class="order-form">
 					<fieldset class="order__radio">
 						<legend>Check size your pizza</legend>
-						<label for="S">Small</label>
-							
-						<input type="radio"id="S" name="size" value="small">
-						
-						<label for="M">Middle</label>
-							
-						<input type="radio"id="M" name="size" value="middle" checked>
-						
-						<label for="L">Large</label>
-							
+						<label for="S">Small</label>							
+						<input type="radio"id="S" name="size" value="small">						
+						<label for="M">Middle</label>							
+						<input type="radio"id="M" name="size" value="middle" checked>						
+						<label for="L">Large</label>							
 						<input type="radio"id="L" name="size" value="large">
-						
 					</fieldset>
 					<fieldset class="check_pizza">
 						<legend>Check product</legend>
@@ -47,18 +44,18 @@
 			</div>
 			<p class="error--message"></p>
 		</div>
-		<div class="order-status">
-			<span></span>
-		</div>>
-		<div class="order-evaluate">
-			<div class="order-evaluate__icons">
-				<span class="fa fa-thumbs-o-down icon"></span>
-				<span class="fa fa-thumbs-o-up icon"></span>
+		<div class="order-info">
+			<div class="order__status">
+				<span></span>
+			</div>
+			<div class="order__evaluate">
+				<div class="order__evaluate-icons">
+					<span class="fa fa-thumbs-o-down icon__dislike"></span>
+					<span class="fa fa-thumbs-o-up icon__like"></span>
+				</div>
 			</div>
 		</div>
+		
 	</div>
-	<script src="Pizza-delivery.js"></script>
-	<!-- <script src="order.js"></script> -->
-	
 </body>
 </html>
