@@ -1,8 +1,104 @@
-ul > li {
+body {
+	margin: 0;
+	padding-left: 30px;
+	width: 100vw;
+	height: auto;
+}
+.title {
+	font-size: 50px;
+}
+.diary-menu {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height: 400px;
+	padding: 10px 0 10px 30px;
+
+}
+.diary-menu > li {
+	position: relative;
+	margin-bottom: 10px;
+	padding-left: 50px;
+	width: 300px;
 	cursor: pointer;
-	width: 200px;
+	list-style: none;
+
+	font-size: 30px;
+	font-family:  Arial, sans-serif;
+	border-radius: 7px;
+}
+.diary-menu > li::before {
+	position: absolute;
+	display: block;
+	content: "";
+	width: 7px;
+	height: 7px;
+	left: 20px;
+	top: 33.3333%;
+
+	border: 2px solid rgba(8, 8, 8, 0.692);
+	border-radius: 25px;	
+	background-color: rgb(243, 237, 231);
 }
 
 .selected {
-	background-color: #pink;
+	background-color: rgb(245, 62, 72);
+	color: rgb(255, 255, 255);
 }
+
+.diary-options {
+	position: absolute;
+	bottom: 0;
+}
+
+.diary-form {
+	margin-bottom: 30px;
+	font-family:  Arial, sans-serif;
+}
+.diary-form__label {
+	display: inline-block;
+	margin-bottom: 10px;
+
+	font-size: 20px;
+	font-weight: 600;
+	color:  rgb(63, 68, 53);
+
+	cursor: pointer;
+}
+.diary-form__input {
+	display: block;
+	width: 50%;
+	padding: 10px 15px;
+
+	font-size: 20px;
+	font-weight: 600;
+	color:rgb(139, 136, 136);
+
+	outline: none;
+	border: 2px solid rgb(139, 136, 136);
+	border-radius: 5px;
+}
+
+.diary__btn {
+	padding: 20px 10px;
+	cursor: pointer;
+
+
+	font-size: 20px;
+	font-weight: 600;
+	text-transform: uppercase;
+
+	background: rgb(211, 201, 67);
+	color: rgb(63, 68, 53);
+	border-width: 0;
+	border-color: rgb(211, 201, 67);
+	border-radius: 6px;
+	outline: none;
+
+}
+
+.diary__btn + button {
+	margin-left: 50px;
+}
+
+

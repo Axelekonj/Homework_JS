@@ -3,18 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<title>Document</title>	
 </head>
 <body>
-	<h1>Список задачь</h1>
-	<ul id="ul">
+	<h1 class="title">Список задачь</h1>
+	<ul class="diary-menu" id="ul">
 		<li>Сходить в магазин</li>
-		<li>Прочитать книгу</li>
-		<li>Позвонить другу</li>
-		<li>Поработать</li>
-		<li>Принять гостей</li>
 	</ul>
+	<div class="diary-options">
+		<form action="" id="taskForm" class="diary-form">
+			<label for="taskText" class="diary-form__label">New Task</label>
+			<input type="text" id="taskText" class="diary-form__input">
+		</form>
+		<div class="diary-buttons">
+			<button class="diary__btn" data-action="Prepend">add start</button>
+			<button class="diary__btn" data-action="Append">add end</button>
+			<button class="diary__btn" data-action="Delete">del select</button>
+			<button class="diary__btn" data-action="Sort">sort select</button>
+		</div>
+	<div>
+	
 	<script src="main.js"></script>
 </body>
 </html>
