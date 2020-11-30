@@ -8,26 +8,26 @@
 </head>
 <body>
 	<div class="registration">
-		<form action="" id="register-form" class="register-form">
+		<form action="" id="registerForm" class="register-form">
 			<div class="form-wrapper">
-				<label for="email">
-					Email
-					<input type="email" id="email">
-				</label>
-				<label for="name">
-					Имя
-					<input type="text" id="name">
-				</label>
-				<label for="password">
-					Пароль
-					<input type="password" id="password">
-				</label>
-				<label for="re-password">
-					Повторение пароля
-					<input type="password" id="re-password">
-				</label>
+				<label for="#email">Email
+					<input type="email" id="email" name="input" class="form__item" value="">
+					<span class="error-text"></span>
+				</label>													
+				<label for="#name">Имя
+					<input type="text" id="name" name="input" class="form__item" value="">
+					<span class="error-text"></span>
+				</label>													
+				<label for="#password">Пароль
+					<input type="text" id="password" name="input" class="form__item" value="">
+					<span class="error-text"></span>
+				</label>								
+				<label for="#re-password">Повторение пароля
+					<input type="text" id="re-password" name="input" class="form__item" value="">
+					<span class="error-text"></span>				
+				</label>					
 			</div>
-			<button class="register-btn">
+			<button type="submit" id="submit" class="form-item register-btn disabled-btn" disabled>
 				<span>Зарегестрироваться</span>
 			</button>
 		</form>
