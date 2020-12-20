@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Work+Sans:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://use.fontawesome.com/cecb31bdbf.js"></script>
+    <title>Phonebook</title>
+</head>
+<body>
+    <header id="header">
+        <div class="phonebook-header">
+            <form action="" id="searchForm" class="search-form">
+                <input type="search" id="search" class="search-contact" placeholder="search">
+            </form>
+            <button id="addContact" class="add-btn">
+                new
+                <i class="btn-icon fa fa-plus"></i>
+            </button>
+        </div>
+    </header>
+    <main id="main">
+        <div class="contacts-list" id="contactsList"></div>
+    </main>
+    <template id="listItemTmpl">
+        <div class="contacts-list__item">
+            <div class="item-field contact-item__image">
+                <img src="" alt="img">
+            </div>
+            <div class="item-field contact-item__data">
+                <p class="item__data-name"></p>
+                <p class="item__data-surname"></p>
+                <p class="item__data-email"></p>
+            </div>
+            <div class="item-field contact-item__number">
+                <p class="item__number-text"></p>
+            </div>
+            <div class="contact-item__options">
+                <div class="options__item">
+                    <i class="options-icon icon-edit fa fa-navicon"></i>
+                </div>
+                <div class="options__item">
+                    <i class="options-icon icon-delete fa fa-ban"></i>
+                </div>
+            </div>
+        </div>
+    </template>
+    <div class="modal" id="modal">
+        <form class="modal-form" id="newContactForm">
+            <span class="modal-close fa fa-close" id="closeModal"></span>
+            <fieldset class="text" id="text">
+                <input type="text" id="name" name="dataInput" placeholder="name" class="modal-input">
+                <input type="text" id="surname" name="dataInput" placeholder="surname" class="modal-input">
+                <input type="email" id="email" name="dataInput" placeholder="email" class="modal-input">
+            </fieldset>
+            <fieldset class="phone-box" id="phoneBox">
+                <div class="phone-box__item">
+                    <input type="tel" id="phone" name="dataInput" class="modal-input" placeholder="+38...">
+                    <span class="phone-add fa fa-plus"></span>
+                </div>
+            </fieldset>
+            <fieldset class="age">
+               <input type="date" id="date" name="dataInput" class="modal-input input--date">
+            </fieldset>
+            <fieldset class="photo">
+                <input type="file" id="contactPhoto" enctype="multipart/form-data" class="modal-input input--file">
+            </fieldset>
+            <button type="submit" class="modal-btn" id="modalSubmit">add</button>
+        </form>
+    </div>
+    <script type="module" src="modules/contact.js"></script>
+    <script type="module" src="modules/functions.js"></script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
